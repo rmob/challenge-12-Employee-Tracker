@@ -10,6 +10,8 @@ This application requires Inquirer, Express, mySql2, and Figlet.
 
 ## Usage
 User access application with their cli.
+[screencap_tracker.webm](https://user-images.githubusercontent.com/22803118/214959030-f3c61c4a-d159-4808-b8fe-28d1387eacab.webm)
+
 
 ## License
 The MIT License
