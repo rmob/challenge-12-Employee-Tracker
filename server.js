@@ -1,4 +1,4 @@
-const express = require('express');
+// const express = require('express');
 const mysql = require('mysql2');
 const inquirer = require('inquirer')
 const figlet = require('figlet')
@@ -6,18 +6,18 @@ const question = require('./routes/questions')
 const questionAddDepartment = require('./routes/questionAddDepartment')
 const questionAddRole = require('./routes/questionAddRole')
 const questionAddEmployee = require('./routes/questionAddEmployee')
-const { addRole, addDepartment } = require('./routes/methods')
+// const { addRole, addDepartment } = require('./routes/methods')
 const cTable = require('console.table');
 const questionUpdateEmployee = require('./routes/questionUpdateEmployee');
 require('dotenv').config()
 
 
 
-const PORT = process.env.PORT || 3001;
-const app = express();
+// const PORT = process.env.PORT || 3001;
+// const app = express();
 
-app.use(express.urlencoded({ extended: false }));
-app.use(express.json());
+// app.use(express.urlencoded({ extended: false }));
+// app.use(express.json());
 
 const db = mysql.createConnection(
   {
@@ -144,15 +144,6 @@ const initQuestion = () => {
 })
 
 }
-
-
-app.use((req, res) => {
-  res.status(404).end();
-});
-
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
 
 
 init()
