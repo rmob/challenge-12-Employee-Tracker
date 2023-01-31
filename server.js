@@ -1,4 +1,3 @@
-const express = require('express');
 const mysql = require('mysql2');
 const inquirer = require('inquirer')
 const figlet = require('figlet')
@@ -58,12 +57,17 @@ const initQuestion = () => {
   inquirer.prompt(question)
   .then(res => {
     if(res.action === 'view all roles') {
-      db.query('Select * FROM emp_role', function(err, results) {
+      db.query('SELECT * FROM emp_role', function(err, results) {
         console.table(results);
         initQuestion()
       })
     } else if (res.action === 'view all employees'){
-      db.query('Select * from employee JOIN emp_role ON emp_role.id = employee.role_id', function(err, results) {
+      db.query('SELECT * FROM employee JOIN emp_role ON emp_role.id = employee.role_id', function(err, results) {
+        console.table(results)
+        initQuestion()
+      })
+    } else if (res.action === 'view all departments'){
+      db.query('SELECT * FROM department', function(err, results) {
         console.table(results)
         initQuestion()
       })
